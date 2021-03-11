@@ -1,0 +1,3 @@
+ - As clases do modelo fazem parte do pacote org.ppr.entity;
+
+ - As classes utilizadas na ``view" fazem parte do pacote org.ppr.entity.vo;
