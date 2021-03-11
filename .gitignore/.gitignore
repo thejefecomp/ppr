@@ -1,0 +1,13 @@
+# Created by Jeferson Souza (thejefecomp) - jefecomp.official@gmail.com
+
+#Files to be ou of track
+
+.project
+.classpath
+.class
+
+#Directories to be out of track
+.settings/
+bin/
+target/
+
