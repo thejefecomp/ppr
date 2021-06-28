@@ -38,21 +38,9 @@ import java.time.LocalDate;
 
 public abstract class Funcionario extends Usuario {
 	
-	private TipoFuncionario tipoFuncionario;
-	
 	private LocalDate dataAdmissao;
 	
-	private ClasseFuncionario classe;
-	
 	private String setor;
-
-	public final TipoFuncionario getTipoFuncionario() {
-		return tipoFuncionario;
-	}
-
-	public final void setTipoFuncionario(TipoFuncionario tipoFuncionario) {
-		this.tipoFuncionario = tipoFuncionario;
-	}
 
 	public final LocalDate getDataAdmissao() {
 		return dataAdmissao;
@@ -60,14 +48,6 @@ public abstract class Funcionario extends Usuario {
 
 	public final void setDataAdmissao(LocalDate dataAdmissao) {
 		this.dataAdmissao = dataAdmissao;
-	}
-
-	public final ClasseFuncionario getClasse() {
-		return classe;
-	}
-
-	public final void setClasse(ClasseFuncionario classe) {
-		this.classe = classe;
 	}
 
 	public final String getSetor() {

@@ -40,7 +40,7 @@ import java.time.LocalDate;
 import org.ppr.entity.Cliente;
 import org.ppr.entity.Conta;
 import org.ppr.entity.Relatorio;
-import org.ppr.entity.TipoConsulta;
+import org.ppr.entity.common.TipoConsulta;
 
 
 public interface IOperacaoBancaria{

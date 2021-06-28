@@ -34,6 +34,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
 package org.ppr.entity;
 
+import org.ppr.entity.common.TipoConsulta;
+
 import java.time.LocalDate;
 
 public class Consulta extends Transacao{
