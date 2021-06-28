@@ -37,7 +37,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   <groupId>org.jefecomp.patterns</groupId>
   <artifactId>jefecomp-patterns-samples</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Jefecomp's Samples of Design Patterns</name>
+  <name>Jeferson Souza (thejefecomp)'s Samples of Design Patterns</name>
   
   <build>
     <plugins>
@@ -45,8 +45,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.5.1</version>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <source>16</source>
+          <target>16</target>
         </configuration>
       </plugin>
     </plugins>
