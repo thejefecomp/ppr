@@ -1,8 +1,8 @@
 /*
 BSD 3-Clause License
 
-Copyright (c) 2018,
-Jeferson Souza (thejefecomp) - jefecomp.official@gmail.com
+Copyright (c) 2018-2026,
+Jeferson L. R. Souza (thejefecomp) - thejefecomp@neartword.com
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -34,25 +34,4 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
 package org.ppr.entity.vo;
 
-public class PaisVO{
-	
-	private Long id;
-	
-	private String nome;
-
-	public final Long getId() {
-		return id;
-	}
-
-	public final void setId(Long id) {
-		this.id = id;
-	}
-
-	public final String getNome() {
-		return nome;
-	}
-
-	public final void setNome(String nome) {
-		this.nome = nome;
-	}
-}
+public record PaisVO(Long id, String nome){}

@@ -1,8 +1,8 @@
 /*
 BSD 3-Clause License
 
-Copyright (c) 2018,
-Jeferson Souza (thejefecomp) - jefecomp.official@gmail.com
+Copyright (c) 2018-2026,
+Jeferson L. R. Souza (thejefecomp) - thejefecomp@neartword.com
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -34,22 +34,25 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 package org.ppr.patterns.factory;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+
+import org.junit.jupiter.api.Test;
 
 public class AbstractGenericFactoryTest{
     
     @Test
     public void newInstanceStringTest(){
 
-	    Assert.assertTrue(AbstractGenericFactory.newInstance("java.lang.String") instanceof String);
+	    assertTrue(AbstractGenericFactory.newInstance("java.lang.String") instanceof String);
 	
-	    Assert.assertNull(AbstractGenericFactory.newInstance("org.jefecomp.entity.User"));
+	    assertNull(AbstractGenericFactory.newInstance("org.jefecomp.entity.User"));
     }
 
     @Test
     public void newInstanceClassTest(){
 
-	Assert.assertTrue(AbstractGenericFactory.newInstance(String.class) instanceof String);	
+    	assertTrue(AbstractGenericFactory.newInstance(String.class) instanceof String);	
     }
 }

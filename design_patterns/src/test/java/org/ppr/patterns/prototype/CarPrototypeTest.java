@@ -1,8 +1,8 @@
 /*
 BSD 3-Clause License
 
-Copyright (c) 2018,
-Jeferson Souza (thejefecomp) - jefecomp.official@gmail.com
+Copyright (c) 2018-2026,
+Jeferson L. R. Souza (thejefecomp) - thejefecomp@neartword.com
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -34,8 +34,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 package org.ppr.patterns.prototype;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+import org.junit.jupiter.api.Test;
 
 public class CarPrototypeTest{
 
@@ -49,9 +51,9 @@ public class CarPrototypeTest{
 
 	CarPrototype carCloned = car.clone();
 
-	Assert.assertNotEquals(car,carCloned);
-	Assert.assertEquals(car.getType(), carCloned.getType());
-	Assert.assertEquals(car.getColour(), carCloned.getColour());
+	assertNotEquals(car,carCloned);
+	assertEquals(car.getType(), carCloned.getType());
+	assertEquals(car.getColour(), carCloned.getColour());
     }
     
 }

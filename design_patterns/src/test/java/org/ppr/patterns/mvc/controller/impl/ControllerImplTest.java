@@ -1,8 +1,8 @@
 /*
 BSD 3-Clause License
 
-Copyright (c) 2019,
-Jeferson Souza (thejefecomp) - jefecomp.official@gmail.com
+Copyright (c) 2019-2026,
+Jeferson L. R. Souza (thejefecomp) - thejefecomp@neartword.com
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -35,13 +35,16 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 package org.ppr.patterns.mvc.controller.impl;
 
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
 import org.ppr.entity.Cliente;
 import org.ppr.entity.PessoaFisica;
 import org.ppr.entity.PessoaJuridica;
@@ -69,7 +72,7 @@ public class ControllerImplTest {
 		
 		clienteVO.setTipoCliente(TipoCliente.PESSOA_FISICA);
 		
-		Assert.assertTrue((Boolean)controllerImpl.execute(OperationEnum.ADD_PESSOA_FISICA, clienteVO));
+		assertTrue((Boolean)controllerImpl.execute(OperationEnum.ADD_PESSOA_FISICA, clienteVO));
 		
 		controllerImpl.execute(OperationEnum.ADD_PESSOA_FISICA, clienteVO);
 		
@@ -90,26 +93,26 @@ public class ControllerImplTest {
 			
 			ClienteDao clienteDao = DaoFactory.getInstance().getDao(DaoEnum.PESSOAFISICA.getEntityClass());
 			Cliente cliente = clienteDao.find(Long.valueOf("00424786931"));
-			Assert.assertNotNull(cliente);
-			Assert.assertEquals("Jeferson", cliente.getPrimeiroNome());
-			Assert.assertEquals("Souza", cliente.getUltimoNome());
-			Assert.assertTrue(cliente instanceof PessoaFisica);
-			Assert.assertEquals(Long.valueOf("00424786931"), ((PessoaFisica)cliente).getCpf());
+			assertNotNull(cliente);
+			assertEquals("Jeferson", cliente.getPrimeiroNome());
+			assertEquals("Souza", cliente.getUltimoNome());
+			assertTrue(cliente instanceof PessoaFisica);
+			assertEquals(Long.valueOf("00424786931"), ((PessoaFisica)cliente).getCpf());
 			
 			clienteDao = DaoFactory.getInstance().getDao(DaoEnum.PESSOAJURIDICA.getEntityClass());
 			cliente = clienteDao.find(Long.valueOf("01234567890123"));
-			Assert.assertNotNull(cliente);
-			Assert.assertEquals("Jeferson", cliente.getPrimeiroNome());
-			Assert.assertEquals("Souza", cliente.getUltimoNome());
-			Assert.assertTrue(cliente instanceof PessoaJuridica);
-			Assert.assertEquals("JCOM Ltda.", ((PessoaJuridica)cliente).getRazaoSocial());
-			Assert.assertEquals("JCOM", ((PessoaJuridica)cliente).getNomeFantasia());
-			Assert.assertEquals(Long.valueOf("01234567890123"), ((PessoaJuridica)cliente).getCnpj());
+			assertNotNull(cliente);
+			assertEquals("Jeferson", cliente.getPrimeiroNome());
+			assertEquals("Souza", cliente.getUltimoNome());
+			assertTrue(cliente instanceof PessoaJuridica);
+			assertEquals("JCOM Ltda.", ((PessoaJuridica)cliente).getRazaoSocial());
+			assertEquals("JCOM", ((PessoaJuridica)cliente).getNomeFantasia());
+			assertEquals(Long.valueOf("01234567890123"), ((PessoaJuridica)cliente).getCnpj());
 			
 			List<Cliente> clienteList = clienteDao.findAll();
 			
-			Assert.assertNotNull(clienteList);
-			Assert.assertEquals(2, clienteList.size());
+			assertNotNull(clienteList);
+			assertEquals(2, clienteList.size());
 			
 		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
 				| NoSuchMethodException | SecurityException e) {
@@ -119,18 +122,18 @@ public class ControllerImplTest {
 		
 		clienteVO = (PessoaFisicaVO) controllerImpl.execute(OperationEnum.FIND_PESSOA_FISICA, Long.valueOf("00424786931"));
 		
-		Assert.assertNotNull(clienteVO);
-		Assert.assertEquals("Jeferson", clienteVO.getPrimeiroNome());
-		Assert.assertEquals("Souza", clienteVO.getUltimoNome());
-		Assert.assertEquals(Long.valueOf("00424786931"), clienteVO.getCpf());
+		assertNotNull(clienteVO);
+		assertEquals("Jeferson", clienteVO.getPrimeiroNome());
+		assertEquals("Souza", clienteVO.getUltimoNome());
+		assertEquals(Long.valueOf("00424786931"), clienteVO.getCpf());
 		
 		clienteJurVO = (PessoaJuridicaVO) controllerImpl.execute(OperationEnum.FIND_PESSOA_JURIDICA, Long.valueOf("01234567890123"));
 		
-		Assert.assertNotNull(clienteJurVO);
-		Assert.assertEquals("Jeferson", clienteJurVO.getPrimeiroNome());
-		Assert.assertEquals("Souza", clienteJurVO.getUltimoNome());
-		Assert.assertEquals("JCOM Ltda.", clienteJurVO.getRazaoSocial());
-		Assert.assertEquals("JCOM", clienteJurVO.getNomeFantasia());
-		Assert.assertEquals(Long.valueOf("01234567890123"), clienteJurVO.getCnpj());
+		assertNotNull(clienteJurVO);
+		assertEquals("Jeferson", clienteJurVO.getPrimeiroNome());
+		assertEquals("Souza", clienteJurVO.getUltimoNome());
+		assertEquals("JCOM Ltda.", clienteJurVO.getRazaoSocial());
+		assertEquals("JCOM", clienteJurVO.getNomeFantasia());
+		assertEquals(Long.valueOf("01234567890123"), clienteJurVO.getCnpj());
 	}
 }
