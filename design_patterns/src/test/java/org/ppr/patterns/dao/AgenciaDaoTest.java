@@ -1,8 +1,8 @@
 /*
 BSD 3-Clause License
 
-Copyright (c) 2019,
-Jeferson Souza (thejefecomp) - jefecomp.official@gmail.com
+Copyright (c) 2019-2026,
+Jeferson L. R. Souza (thejefecomp) - thejefecomp@neartword.com
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -34,12 +34,16 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 package org.ppr.patterns.dao;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
 import java.lang.reflect.InvocationTargetException;
 import java.time.LocalDate;
 import java.util.List;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
 import org.ppr.entity.Agencia;
 import org.ppr.entity.Banco;
 import org.ppr.entity.Cidade;
@@ -116,11 +120,11 @@ public class AgenciaDaoTest {
 		
 		Agencia agenciaRetorno = this.agenciaDao.insert(agencia.getId(), agencia);
 		
-		Assert.assertEquals(agencia, agenciaRetorno);
-		Assert.assertEquals(banco, agenciaRetorno.getBanco());
-		Assert.assertEquals(endereco, agenciaRetorno.getEndereco());
-		Assert.assertEquals(cidade, agencia.getEndereco().getCidade());
-		Assert.assertEquals(pais, agenciaRetorno.getEndereco().getCidade().getPais());
+		assertEquals(agencia, agenciaRetorno);
+		assertEquals(banco, agenciaRetorno.getBanco());
+		assertEquals(endereco, agenciaRetorno.getEndereco());
+		assertEquals(cidade, agencia.getEndereco().getCidade());
+		assertEquals(pais, agenciaRetorno.getEndereco().getCidade().getPais());
 	}
 	
 	@Test
@@ -130,56 +134,56 @@ public class AgenciaDaoTest {
 		
 		Agencia agencia = this.agenciaDao.find(1L);
 		
-		Assert.assertNotNull(agencia);
-		Assert.assertNotNull(agencia.getBanco());
-		Assert.assertNotNull(agencia.getEndereco());
+		assertNotNull(agencia);
+		assertNotNull(agencia.getBanco());
+		assertNotNull(agencia.getEndereco());
 		
 		List<Agencia> agenciaList = this.agenciaDao.findAll();
 		
-		Assert.assertNotNull(agenciaList);
-		Assert.assertEquals(1, agenciaList.size());
+		assertNotNull(agenciaList);
+		assertEquals(1, agenciaList.size());
 		
 		Banco banco = this.bancoDao.find(1L);
 		
-		Assert.assertNotNull(banco);
-		Assert.assertEquals(banco, agencia.getBanco());
+		assertNotNull(banco);
+		assertEquals(banco, agencia.getBanco());
 		
 		List<Banco> bancoList = this.bancoDao.findAll();
 		
-		Assert.assertNotNull(bancoList);
-		Assert.assertEquals(1, bancoList.size());
+		assertNotNull(bancoList);
+		assertEquals(1, bancoList.size());
 		
 		Endereco endereco = this.enderecoDao.find(1L);
 		
-		Assert.assertNotNull(endereco);
-		Assert.assertNotNull(endereco.getCidade());
-		Assert.assertEquals(endereco, agencia.getEndereco());
+		assertNotNull(endereco);
+		assertNotNull(endereco.getCidade());
+		assertEquals(endereco, agencia.getEndereco());
 		
 		List<Endereco> enderecoList = this.enderecoDao.findAll();
 		
-		Assert.assertNotNull(enderecoList);
-		Assert.assertEquals(1, enderecoList.size());
+		assertNotNull(enderecoList);
+		assertEquals(1, enderecoList.size());
 		
 		Cidade cidade = this.cidadeDao.find(1L);
 		
-		Assert.assertNotNull(cidade);
-		Assert.assertEquals(cidade, endereco.getCidade());
-		Assert.assertNotNull(cidade.getPais());
+		assertNotNull(cidade);
+		assertEquals(cidade, endereco.getCidade());
+		assertNotNull(cidade.getPais());
 		
 		List<Cidade> cidadeList = this.cidadeDao.findAll();
 		
-		Assert.assertNotNull(cidadeList);
-		Assert.assertEquals(1, cidadeList.size());
+		assertNotNull(cidadeList);
+		assertEquals(1, cidadeList.size());
 		
 		Pais pais = this.paisDao.find(1L);
 		
-		Assert.assertNotNull(pais);
-		Assert.assertEquals(pais, cidade.getPais());
+		assertNotNull(pais);
+		assertEquals(pais, cidade.getPais());
 		
 		List<Pais> paisList = this.paisDao.findAll();
 		
-		Assert.assertNotNull(paisList);
-		Assert.assertEquals(1, paisList.size());
+		assertNotNull(paisList);
+		assertEquals(1, paisList.size());
 	}
 	
 	@Test
@@ -189,7 +193,7 @@ public class AgenciaDaoTest {
 		
 		this.agenciaDao.delete(1L);
 		
-		Assert.assertNull(this.agenciaDao.find(1L));
+		assertNull(this.agenciaDao.find(1L));
 	}
 	
 	@Test
@@ -199,7 +203,7 @@ public class AgenciaDaoTest {
 		
 		Agencia agencia = this.agenciaDao.find(1L);
 		
-		Assert.assertEquals("Agencia Teste", agencia.getNome());
+		assertEquals("Agencia Teste", agencia.getNome());
 		
 		agencia.setNome("Nome Agencia Atualizado");
 		
@@ -207,6 +211,6 @@ public class AgenciaDaoTest {
 		
 		agencia = this.agenciaDao.find(1L);
 		
-		Assert.assertEquals("Nome Agencia Atualizado", agencia.getNome());
+		assertEquals("Nome Agencia Atualizado", agencia.getNome());
 	}
 }

@@ -1,8 +1,8 @@
 /*
 BSD 3-Clause License
 
-Copyright (c) 2018,
-Jeferson Souza (thejefecomp) - jefecomp.official@gmail.com
+Copyright (c) 2018-2026,
+Jeferson L. R. Souza (thejefecomp) - thejefecomp@neartword.com
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -34,8 +34,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 package org.ppr.patterns.builder;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
 import org.ppr.entity.Cliente;
 import org.ppr.entity.common.TipoCliente;
 
@@ -53,10 +55,10 @@ public class ClientBuilderTest{
 	                          .addUltimoNome("Souza")
 	                          .build();
 
-	Assert.assertEquals(Long.valueOf(1L), newClient.getId());
-	Assert.assertEquals("jefecomp.official@gmail.com", newClient.getEmail());
-	Assert.assertEquals("Jeferson", newClient.getPrimeiroNome());
-	Assert.assertEquals("Souza", newClient.getUltimoNome());
-	Assert.assertEquals(TipoCliente.PESSOA_FISICA, newClient.getTipoCLiente());
+	assertEquals(Long.valueOf(1L), newClient.getId());
+	assertEquals("jefecomp.official@gmail.com", newClient.getEmail());
+	assertEquals("Jeferson", newClient.getPrimeiroNome());
+	assertEquals("Souza", newClient.getUltimoNome());
+	assertEquals(TipoCliente.PESSOA_FISICA, newClient.getTipoCLiente());
     } 
 }

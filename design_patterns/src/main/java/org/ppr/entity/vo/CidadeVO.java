@@ -1,8 +1,8 @@
 /*
 BSD 3-Clause License
 
-Copyright (c) 2018,
-Jeferson Souza (thejefecomp) - jefecomp.official@gmail.com
+Copyright (c) 2018-2026,
+Jeferson L. R. Souza (thejefecomp) - thejefecomp@neartword.com
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -34,45 +34,4 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
 package org.ppr.entity.vo;
 
-public class CidadeVO{
-	
-	private Long id;
-	
-	private String nome;
-	
-	private EstadoVO estado;
-	
-	private PaisVO pais;
-
-	public final Long getId() {
-		return id;
-	}
-
-	public final void setId(Long id) {
-		this.id = id;
-	}
-
-	public final String getNome() {
-		return nome;
-	}
-
-	public final void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public final EstadoVO getEstado() {
-		return estado;
-	}
-
-	public final void setEstado(EstadoVO estado) {
-		this.estado = estado;
-	}
-
-	public final PaisVO getPais() {
-		return pais;
-	}
-
-	public final void setPais(PaisVO pais) {
-		this.pais = pais;
-	}
-}
+public record CidadeVO(Long id, String name, EstadoVO estado, PaisVO pais) {}

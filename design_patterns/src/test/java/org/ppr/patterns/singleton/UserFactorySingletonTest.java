@@ -1,8 +1,8 @@
 /*
 BSD 3-Clause License
 
-Copyright (c) 2018,
-Jeferson Souza (thejefecomp) - jefecomp.official@gmail.com
+Copyright (c) 2018-2026,
+Jeferson L. R. Souza (thejefecomp) - thejefecomp@neartword.com
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -34,20 +34,22 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 package org.ppr.patterns.singleton;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
 
 public class UserFactorySingletonTest{
 
     @Test
     public void getInstanceTest(){
 
-	UserFactorySingleton factory = UserFactorySingleton.getInstance();
-
-	UserFactorySingleton sameFactory = UserFactorySingleton.getInstance();
-
-	Assert.assertNotNull(factory);
-	Assert.assertNotNull(sameFactory);
-	Assert.assertTrue(factory == sameFactory);
+		UserFactorySingleton factory = UserFactorySingleton.getInstance();
+	
+		UserFactorySingleton sameFactory = UserFactorySingleton.getInstance();
+	
+		assertNotNull(factory);
+		assertNotNull(sameFactory);
+		assertTrue(factory == sameFactory);
    }
 }

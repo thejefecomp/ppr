@@ -2,7 +2,7 @@
 BSD 3-Clause License
 
 Copyright (c) 2018,
-Jeferson Souza (thejefecomp) - jefecomp.official@gmail.com
+Jeferson L. R. Souza (thejefecomp) - thejefecomp@neartword.com
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -34,8 +34,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 package org.ppr.patterns.factory;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
+
 import org.ppr.entity.Gerente;
 import org.ppr.entity.PessoaFisica;
 import org.ppr.entity.PessoaJuridica;
@@ -51,23 +55,23 @@ public class UserFactoryTest{
 	
 	Usuario usuario = factory.newInstance(TipoUsuario.GERENTE);
 
-	Assert.assertNotNull(usuario);
-	Assert.assertTrue(usuario instanceof Gerente);
+	assertNotNull(usuario);
+	assertTrue(usuario instanceof Gerente);
 	
 	
 	usuario = factory.newInstance(TipoUsuario.PESSOA_FISICA);
 
-	Assert.assertNotNull(usuario);
-	Assert.assertTrue(usuario instanceof PessoaFisica);
+	assertNotNull(usuario);
+	assertTrue(usuario instanceof PessoaFisica);
 	
 	usuario = factory.newInstance(TipoUsuario.PESSOA_JURIDICA);
 
-	Assert.assertNotNull(usuario);
-	Assert.assertTrue(usuario instanceof PessoaJuridica);
+	assertNotNull(usuario);
+	assertTrue(usuario instanceof PessoaJuridica);
 	
 	usuario = factory.newInstance(null);
 
-	Assert.assertNull(usuario);
+	assertNull(usuario);
 
 
 

@@ -1,8 +1,8 @@
 /*
 BSD 3-Clause License
 
-Copyright (c) 2018,
-Jeferson Souza (thejefecomp) - jefecomp.official@gmail.com
+Copyright (c) 2018-2026,
+Jeferson L. R. Souza (thejefecomp) - thejefecomp@neartword.com
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -34,8 +34,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 package org.ppr.patterns.factory;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
+
 import org.ppr.entity.Gerente;
 import org.ppr.entity.PessoaFisica;
 import org.ppr.entity.PessoaJuridica;
@@ -49,15 +51,15 @@ public class UserFactory2Test{
 
 	UsuarioFactory2<Usuario> factoryGer = new UsuarioFactory2<>(TipoUsuario.GERENTE);
    
-	Assert.assertTrue(factoryGer.newInstance() instanceof Gerente);
+	assertTrue(factoryGer.newInstance() instanceof Gerente);
 
 	UsuarioFactory2<PessoaFisica> factoryPF = new UsuarioFactory2<>(TipoUsuario.PESSOA_FISICA);
    
-	Assert.assertTrue(factoryPF.newInstance() instanceof PessoaFisica);
+	assertTrue(factoryPF.newInstance() instanceof PessoaFisica);
 
 	UsuarioFactory2<PessoaJuridica> factoryPJ = new UsuarioFactory2<>(TipoUsuario.PESSOA_JURIDICA);
    
-	Assert.assertTrue(factoryPJ.newInstance() instanceof PessoaJuridica);
+	assertTrue(factoryPJ.newInstance() instanceof PessoaJuridica);
 	
     }
 }

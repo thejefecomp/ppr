@@ -1,8 +1,8 @@
 /*
 BSD 3-Clause License
 
-Copyright (c) 2018,
-Jeferson Souza (thejefecomp) - jefecomp.official@gmail.com
+Copyright (c) 2018-2026,
+Jeferson L. R. Souza (thejefecomp) - thejefecomp@neartword.com
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -34,65 +34,4 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  
 package org.ppr.entity.vo;
 
-public class EnderecoVO{
-	
-	private Long cep;
-	
-	private String logradouro;
-	
-	private String complemento;
-	
-	private Integer numero;
-	
-	private CidadeVO cidade;
-	
-	private PaisVO pais;
-
-	public final Long getCep() {
-		return cep;
-	}
-
-	public final void setCep(Long cep) {
-		this.cep = cep;
-	}
-
-	public final String getLogradouro() {
-		return logradouro;
-	}
-
-	public final void setLogradouro(String logradouro) {
-		this.logradouro = logradouro;
-	}
-
-	public final String getComplemento() {
-		return complemento;
-	}
-
-	public final void setComplemento(String complemento) {
-		this.complemento = complemento;
-	}
-
-	public final Integer getNumero() {
-		return numero;
-	}
-
-	public final void setNumero(Integer numero) {
-		this.numero = numero;
-	}
-
-	public final CidadeVO getCidade() {
-		return cidade;
-	}
-
-	public final void setCidade(CidadeVO cidade) {
-		this.cidade = cidade;
-	}
-
-	public final PaisVO getPais() {
-		return pais;
-	}
-
-	public final void setPais(PaisVO pais) {
-		this.pais = pais;
-	}
-}
+public record EnderecoVO(Long cep, String logradouro, String complemento, Integer numero, CidadeVO cidade, PaisVO pais) {}
